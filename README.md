@@ -17,6 +17,57 @@ To start using the Sudoku Solver:
 2. Utilize the provided classes and methods to integrate Sudoku solving into your Java applications.
 3. Explore the various solver methods and test cases to understand how to validate and solve Sudoku puzzles effectively.
 
+## Usage
+To use the Sudoku Solver in your Java project, follow these steps:
+
+1. Import the necessary classes into your Java file:
+    ```java
+    import yourpackage.Sudoku;
+    import yourpackage.UniqueDiagonalSudoku;
+    ```
+
+2. Create instances of Sudoku puzzles using the provided constructors, passing the initial grid as input:
+    ```java
+    int[][] sudokuGrid = {
+        {5, 3, 0, 0, 7, 0, 0, 0, 0},
+        {6, 0, 0, 1, 9, 5, 0, 0, 0},
+        {0, 9, 8, 0, 0, 0, 0, 6, 0},
+        {8, 0, 0, 0, 6, 0, 0, 0, 3},
+        {4, 0, 0, 8, 0, 3, 0, 0, 1},
+        {7, 0, 0, 0, 2, 0, 0, 0, 6},
+        {0, 6, 0, 0, 0, 0, 2, 8, 0},
+        {0, 0, 0, 4, 1, 9, 0, 0, 5},
+        {0, 0, 0, 0, 8, 0, 0, 7, 9}
+    };
+
+    Sudoku sudoku = new Sudoku(sudokuGrid);
+    ```
+
+3. Use the provided methods to solve or validate the Sudoku puzzle:
+    ```java
+    boolean isValidSolution = sudoku.isValidSolution();
+    System.out.println("Is the solution valid? " + isValidSolution);
+    ```
+
+4. For unique diagonal Sudoku puzzles, use the `UniqueDiagonalSudoku` class:
+    ```java
+    int[][] uniqueDiagonalSudokuGrid = {
+        {1, 0, 0, 0, 0, 0, 0, 0, 0},
+        {0, 2, 0, 0, 0, 0, 0, 0, 0},
+        {0, 0, 3, 0, 0, 0, 0, 0, 0},
+        {0, 0, 0, 4, 0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 5, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0, 6, 0, 0, 0},
+        {0, 0, 0, 0, 0, 0, 7, 0, 0},
+        {0, 0, 0, 0, 0, 0, 0, 8, 0},
+        {0, 0, 0, 0, 0, 0, 0, 0, 9}
+    };
+
+    UniqueDiagonalSudoku uniqueDiagonalSudoku = new UniqueDiagonalSudoku(uniqueDiagonalSudokuGrid);
+    boolean isValidUniqueDiagonalSolution = uniqueDiagonalSudoku.isValidSolution();
+    System.out.println("Is the unique diagonal solution valid? " + isValidUniqueDiagonalSolution);
+    ```
+
 ## Contributing
 Contributions to the Sudoku Solver are welcome! Whether you're improving existing functionality, adding new features, or fixing bugs, your contributions are appreciated. Please refer to the [contributing guidelines](CONTRIBUTING.md) for more information.
 
